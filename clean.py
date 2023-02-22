@@ -29,3 +29,5 @@ df = pd.merge(contact_info,other_info,left_on="respondent_id",right_on="id")
 df.dropna(inplace=True)
 df.drop(df[df['job'].str.lower().str.contains('insurance')].index,inplace=True)
 df.to_csv(output_file)
+
+print("Shape of the output file: "+str(df.shape))
